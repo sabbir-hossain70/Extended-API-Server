@@ -16,7 +16,7 @@ import (
 
 func main() {
 	var proxy = false
-	flag.BoolVar(&proxy, "proxy", proxy, "proxy mode")
+	flag.BoolVar(&proxy, "receive-proxy-request", proxy, "proxy mode")
 	flag.Parse()
 	fs := afero.NewOsFs()
 	store, err := certstore.NewCertStore(fs, certstore.CertDir)
@@ -103,7 +103,7 @@ func main() {
 		}
 		vars := mux.Vars(r)
 		w.WriteHeader(http.StatusOK)
-		fmt.Fprint(w, "Resource: %v requested by user [%s]=%s\n", vars["resource"], src, user)
+		fmt.Println("Resource: ", vars["resource"], " src: ", src, " user: ", user)
 
 	})
 	r.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {

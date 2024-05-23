@@ -13,7 +13,7 @@ import (
 	"strings"
 )
 
-const CertDir = "/home/user/go/src/github.com/sabbir-hossain70/extended-apiserver/certs"
+const CertDir = "/home/user/go/github.com/sabbir-hossain70/Extended-API-Server/certs"
 
 type CertStore struct {
 	fs           afero.Fs

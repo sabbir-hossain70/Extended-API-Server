@@ -99,7 +99,7 @@ func main() {
 			store.CertFile("ca"),
 		},
 		CertFile: store.CertFile("tls"),
-		KeyFile:  store.CertFile("tls"),
+		KeyFile:  store.KeyFile("tls"),
 	}
 
 	srv := server.NewGenericServer(cfg)
@@ -121,7 +121,7 @@ func main() {
 			}
 			client := &http.Client{
 				Transport: tr,
-				Timeout:   time.Second * 10,
+				Timeout:   time.Duration(20 * time.Second),
 			}
 			u := *r.URL
 			u.Scheme = "https"
