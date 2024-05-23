@@ -1,6 +1,6 @@
 package server
 
-type config struct {
+type Config struct {
 	Address     string
 	CACertFiles []string
 	CertFile    string

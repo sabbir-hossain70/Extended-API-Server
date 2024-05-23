@@ -10,10 +10,10 @@ import (
 )
 
 type GenericServer struct {
-	cfg config
+	cfg Config
 }
 
-func NewGenericServer(cfg config) *GenericServer {
+func NewGenericServer(cfg Config) *GenericServer {
 	return &GenericServer{cfg: cfg}
 }
 
